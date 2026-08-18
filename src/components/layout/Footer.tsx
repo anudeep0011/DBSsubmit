@@ -4,8 +4,8 @@ import { SITE, UCHECK_LOGIN_URL } from '@/lib/constants';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-gradient-to-b from-navy-800 to-navy-900 text-navy-100 pt-16 pb-12 border-t border-navy-700/50">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+    <footer className="bg-linear-to-b from-navy-800 to-navy-900 text-navy-100 pt-16 pb-12 border-t border-navy-700/50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
         
         {/* Brand & Overview Strip */}
         <div className="pb-10 mb-10 border-b border-navy-700/50 flex flex-col md:flex-row md:items-center justify-between gap-6">

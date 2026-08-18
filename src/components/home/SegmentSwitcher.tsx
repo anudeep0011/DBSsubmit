@@ -116,7 +116,7 @@ export const SegmentSwitcher: React.FC = () => {
         </div>
 
         {/* Content Card with Photographic Image Panel */}
-        <div className="bg-navy-50/70 rounded-2xl border border-navy-200 p-8 sm:p-12 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div className="bg-navy-50/70 rounded-2xl border border-navy-200 p-4 sm:p-8 md:p-12 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           {/* Left Text Column */}
           <div className="lg:col-span-6 space-y-6">
             <h3 className="text-2xl sm:text-3xl font-semibold text-navy-900 tracking-tight">

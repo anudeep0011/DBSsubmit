@@ -3,21 +3,16 @@ import React from 'react';
 export const HeroLandingGraphic: React.FC = () => {
   return (
     <div className="relative">
-      {/* Background Subtle Glow */}
-      <div className="absolute -inset-4 bg-blend-cool/40 rounded-3xl blur-2xl pointer-events-none" />
-
-      {/* Main Glass Visual Container */}
-      <div className="relative bg-navy-800/95 border border-navy-600/60 rounded-2xl p-6 sm:p-8 shadow-2xl backdrop-blur-md space-y-6 text-white">
+      {/* Main Visual Container */}
+      <div className="relative bg-navy-800 border border-navy-600/60 rounded-2xl p-6 sm:p-8 shadow-xl space-y-6 text-white">
         
         {/* Top Header Bar */}
         <div className="flex items-center justify-between border-b border-navy-700 pb-4">
-          <div className="flex items-center space-x-2">
-            <span className="w-3 h-3 rounded-full bg-orange-400" />
-            <span className="w-3 h-3 rounded-full bg-navy-500" />
-            <span className="w-3 h-3 rounded-full bg-navy-500" />
-          </div>
-          <span className="text-xs text-orange-300 font-medium tracking-wide">
-            uCheck Government Verified Pipeline
+          <span className="text-xs font-semibold text-white tracking-wide">
+            Verified Check Pipeline
+          </span>
+          <span className="text-xs text-orange-300 font-medium">
+            uCheck System
           </span>
         </div>
 
@@ -45,7 +40,7 @@ export const HeroLandingGraphic: React.FC = () => {
               <span className="text-orange-300 font-medium">1–3 Days Est. Turnaround</span>
             </div>
             <div className="w-full bg-navy-700 h-2.5 rounded-full overflow-hidden">
-              <div className="bg-gradient-to-r from-orange-400 to-orange-300 h-full w-4/5 rounded-full shadow-xs" />
+              <div className="bg-linear-to-r from-orange-400 to-orange-300 h-full w-4/5 rounded-full shadow-xs" />
             </div>
           </div>
         </div>

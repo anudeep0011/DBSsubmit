@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { NAV_LINKS, UCHECK_LOGIN_URL, UCHECK_APPLY_URL, SITE } from '@/lib/constants';
@@ -14,10 +14,21 @@ interface MobileNavProps {
 export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
   const pathname = usePathname();
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 lg:hidden">
+    <div className="fixed inset-0 z-60 lg:hidden">
       {/* Backdrop */}
       <div
         className="fixed inset-0 bg-navy-900/80 backdrop-blur-sm transition-opacity"

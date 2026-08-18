@@ -10,20 +10,20 @@ import { ShieldIcon, CheckCircle2Icon } from '@/components/ui/Icons';
 
 export const HeroSection: React.FC = () => {
   return (
-    <section className="relative bg-gradient-to-br from-navy-950 via-navy-900 to-navy-950 text-white pt-36 sm:pt-44 pb-20 md:pb-28 min-h-[85vh] flex items-center overflow-hidden">
-      {/* Dynamic Background Blended Glows */}
-      <div className="absolute top-1/4 left-10 w-96 h-96 bg-orange-500/15 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-[500px] h-[500px] bg-blue-600/15 rounded-full blur-3xl pointer-events-none" />
+    <section className="relative bg-linear-to-br from-navy-950 via-navy-900 to-navy-950 text-white pt-28 sm:pt-44 pb-16 md:pb-28 min-h-[80vh] sm:min-h-[85vh] flex items-center overflow-hidden">
+      {/* Background Lighting & Glows - hidden on mobile to prevent overflow */}
+      <div className="absolute top-1/4 left-10 w-96 h-96 bg-orange-500/15 rounded-full blur-3xl pointer-events-none hidden sm:block" />
+      <div className="absolute bottom-10 right-10 w-125 h-125 bg-blue-600/15 rounded-full blur-3xl pointer-events-none hidden sm:block" />
 
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 w-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
           {/* Left Column: Benefit-Led Content */}
           <div className="lg:col-span-7 space-y-8">
             <ScrollReveal delay={0.1} direction="up">
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] text-white">
+              <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.08] text-white">
                 Background checks that <br className="hidden sm:inline" />
-                <span className="bg-gradient-to-r from-orange-400 via-amber-400 to-orange-300 bg-clip-text text-transparent">
+                <span className="bg-linear-to-r from-orange-400 via-amber-400 to-orange-300 bg-clip-text text-transparent">
                   don&apos;t slow you down.
                 </span>
               </h1>
@@ -72,7 +72,7 @@ export const HeroSection: React.FC = () => {
           {/* Right Column: Hero Photographic Dashboard Image Panel */}
           <div className="lg:col-span-5 relative">
             <ScrollReveal delay={0.3} direction="up">
-              <div className="relative bg-gradient-to-b from-navy-800/90 to-navy-900/90 border border-navy-700/70 rounded-3xl overflow-hidden shadow-2xl backdrop-blur-md h-72 sm:h-96 lg:h-[420px] w-full group">
+              <div className="relative bg-linear-to-b from-navy-800/90 to-navy-900/90 border border-navy-700/70 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl backdrop-blur-md h-56 sm:h-96 lg:h-[420px] w-full group">
                 <Image
                   src="/images/features/hero_dashboard_preview.png"
                   alt="DBSsubmit candidate background check status dashboard"
@@ -81,21 +81,7 @@ export const HeroSection: React.FC = () => {
                   sizes="(max-width: 1024px) 100vw, 40vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent pointer-events-none" />
-                
-                {/* Overlay Status Pill Badge */}
-                <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-navy-900/90 border border-navy-700/80 backdrop-blur-md shadow-xl flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <span className="w-3 h-3 rounded-full bg-emerald-400 animate-pulse" />
-                    <div>
-                      <span className="text-xs font-bold text-white block">uCheck Direct API Portal</span>
-                      <span className="text-[10px] text-navy-300">Live DBS application submission</span>
-                    </div>
-                  </div>
-                  <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                    Accredited
-                  </span>
-                </div>
+                <div className="absolute inset-0 bg-linear-to-t from-navy-950/80 via-transparent to-transparent pointer-events-none" />
               </div>
             </ScrollReveal>
           </div>

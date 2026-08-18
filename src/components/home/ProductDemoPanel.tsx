@@ -18,18 +18,10 @@ export const ProductDemoPanel: React.FC = () => {
 
   return (
     <div className="relative">
-      {/* Background Glow */}
-      <div className="absolute -inset-3 bg-blend-cool/40 rounded-3xl blur-2xl pointer-events-none" />
-
-      <div className="relative bg-navy-800/95 border border-navy-600/60 rounded-2xl p-6 sm:p-8 shadow-2xl backdrop-blur-md space-y-6 text-white">
-        {/* Mock Top Header */}
+      <div className="relative bg-navy-800 border border-navy-600/60 rounded-2xl p-6 sm:p-8 shadow-xl space-y-6 text-white">
+        {/* Header */}
         <div className="flex items-center justify-between border-b border-navy-700 pb-4">
-          <div className="flex items-center space-x-2">
-            <span className="w-3 h-3 rounded-full bg-orange-400" />
-            <span className="w-3 h-3 rounded-full bg-navy-500" />
-            <span className="w-3 h-3 rounded-full bg-navy-500" />
-          </div>
-          <span className="text-xs text-navy-200 font-medium tracking-wide">
+          <span className="text-xs text-navy-200 font-semibold tracking-wide">
             Instant Check Calculator
           </span>
         </div>

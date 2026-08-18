@@ -33,8 +33,8 @@ export const FAQClientContainer: React.FC<FAQClientContainerProps> = ({ items })
         </div>
       ) : (
         <>
-          {/* 3-Column Gallery Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* FAQ Accordion Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
             {visibleItems.map((item) => (
               <FAQAccordion key={item.id} item={item} />
             ))}

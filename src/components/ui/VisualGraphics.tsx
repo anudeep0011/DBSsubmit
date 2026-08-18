@@ -7,10 +7,7 @@ interface GraphicProps {
 export const SmeVisualCard: React.FC<GraphicProps> = ({ className = 'w-full h-full' }) => (
   <div className={`bg-navy-900 rounded-xl p-6 text-white border border-navy-700 space-y-4 shadow-md flex flex-col justify-between ${className}`}>
     <div className="flex items-center justify-between border-b border-navy-700 pb-3">
-      <div className="flex items-center gap-2">
-        <span className="w-2.5 h-2.5 rounded-full bg-orange-400" />
-        <span className="text-xs font-semibold text-white">SME Fast-Track Dashboard</span>
-      </div>
+      <span className="text-xs font-semibold text-white">SME Fast-Track Dashboard</span>
       <span className="text-[11px] bg-orange-400/20 text-orange-300 px-2 py-0.5 rounded border border-orange-400/30">
         Pay-As-You-Go
       </span>
@@ -41,10 +38,7 @@ export const SmeVisualCard: React.FC<GraphicProps> = ({ className = 'w-full h-fu
 export const EnterpriseVisualCard: React.FC<GraphicProps> = ({ className = 'w-full h-full' }) => (
   <div className={`bg-navy-900 rounded-xl p-6 text-white border border-navy-700 space-y-4 shadow-md flex flex-col justify-between ${className}`}>
     <div className="flex items-center justify-between border-b border-navy-700 pb-3">
-      <div className="flex items-center gap-2">
-        <span className="w-2.5 h-2.5 rounded-full bg-orange-400" />
-        <span className="text-xs font-semibold text-white">Enterprise Bulk Matrix</span>
-      </div>
+      <span className="text-xs font-semibold text-white">Enterprise Bulk Matrix</span>
       <span className="text-[11px] bg-orange-400/20 text-orange-300 px-2 py-0.5 rounded border border-orange-400/30">
         Volume Rate Applied
       </span>
@@ -75,10 +69,7 @@ export const EnterpriseVisualCard: React.FC<GraphicProps> = ({ className = 'w-fu
 export const IndividualVisualCard: React.FC<GraphicProps> = ({ className = 'w-full h-full' }) => (
   <div className={`bg-navy-900 rounded-xl p-6 text-white border border-navy-700 space-y-4 shadow-md flex flex-col justify-between ${className}`}>
     <div className="flex items-center justify-between border-b border-navy-700 pb-3">
-      <div className="flex items-center gap-2">
-        <span className="w-2.5 h-2.5 rounded-full bg-orange-400" />
-        <span className="text-xs font-semibold text-white">Individual Applicant Portal</span>
-      </div>
+      <span className="text-xs font-semibold text-white">Individual Applicant Portal</span>
       <span className="text-[11px] bg-orange-400/20 text-orange-300 px-2 py-0.5 rounded border border-orange-400/30">
         No Sponsor Needed
       </span>
