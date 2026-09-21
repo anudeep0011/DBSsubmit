@@ -5,8 +5,8 @@ import { SITE } from '@/lib/constants';
 import { EnvelopeMessageIcon } from '@/components/ui/Illustrations';
 
 export const metadata = {
-  title: 'Contact Us | DBSsubmit',
-  description: 'Get in touch with the DBSsubmit support and sales team for enquiries on DBS checks.',
+  title: 'Contact Us | DBS-Express',
+  description: 'Get in touch with the DBS-Express support and sales team for enquiries on DBS checks.',
 };
 
 export default function ContactPage() {
@@ -24,7 +24,7 @@ export default function ContactPage() {
               </ScrollReveal>
               <ScrollReveal delay={0.2}>
                 <p className="text-lg sm:text-xl text-gray-700 leading-relaxed font-normal max-w-2xl">
-                  Our support team is available Monday–Friday, 9am–5pm. For DBS application status updates, log in to your uCheck dashboard directly.
+                  Our support team is available Monday–Friday, 9am–5pm. For DBS application status updates, log in to your dashboard directly.
                 </p>
               </ScrollReveal>
             </div>
@@ -47,7 +47,7 @@ export default function ContactPage() {
               <div className="space-y-3">
                 <h2 className="text-2xl sm:text-3xl font-semibold text-navy-900 tracking-tight">Direct channels</h2>
                 <p className="text-base text-gray-700 leading-relaxed font-normal">
-                  Reach our team by phone, email, or post for guidance on organizational registration and eligibility.
+                  Reach our team by phone, email, or post for guidance on organisational registration and eligibility.
                 </p>
               </div>
 
@@ -94,7 +94,7 @@ export default function ContactPage() {
               <div className="p-6 bg-white rounded-2xl border border-navy-200 text-xs text-gray-700 space-y-2 shadow-sm">
                 <p className="font-medium text-navy-900 text-sm">Note regarding DBS application status checks:</p>
                 <p className="leading-relaxed font-normal">
-                  If you have already submitted an application through uCheck, please log in directly to your uCheck dashboard to view real-time tracking updates.
+                  If you have already submitted an application through our platform, please log in directly to your dashboard to view real-time tracking updates.
                 </p>
               </div>
             </div>

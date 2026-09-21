@@ -9,7 +9,7 @@ interface FAQSearchProps {
 
 export const FAQSearch: React.FC<FAQSearchProps> = ({ searchTerm, onSearchChange }) => {
   return (
-    <div className="relative max-w-2xl mx-auto mb-16">
+    <div className="relative max-w-2xl mx-auto mb-8">
       <input
         type="text"
         value={searchTerm}

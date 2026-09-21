@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://dbssubmit.co.uk';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://dbs-express.co.uk';
 
   const routes = [
     '',

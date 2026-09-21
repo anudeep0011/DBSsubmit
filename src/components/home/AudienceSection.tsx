@@ -47,13 +47,13 @@ export const AudienceSection: React.FC = () => {
                 </h3>
 
                 <p className="text-lg text-gray-700 leading-relaxed font-normal">
-                  Streamline candidate background checks for your organisation. Access volume discounts, applicant tracking, and automated check management via uCheck.
+                  Streamline candidate background checks for your organisation. Access volume discounts, applicant tracking, and automated check management via our secure platform.
                 </p>
 
                 <ul className="space-y-3 text-sm font-normal text-navy-900 pt-2">
                   <li className="flex items-center gap-3">
                     <span className="w-4 h-4 rounded-full bg-orange-50 text-orange-500 border border-orange-300 flex items-center justify-center text-[10px] font-medium shrink-0">✓</span>
-                    Volume discounts for 20+ annual checks
+                    Volume discounts for 51+ annual checks
                   </li>
                   <li className="flex items-center gap-3">
                     <span className="w-4 h-4 rounded-full bg-orange-50 text-orange-500 border border-orange-300 flex items-center justify-center text-[10px] font-medium shrink-0">✓</span>

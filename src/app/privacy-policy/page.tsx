@@ -3,8 +3,8 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { SITE } from '@/lib/constants';
 
 export const metadata = {
-  title: 'Privacy Policy | DBSsubmit',
-  description: 'Privacy policy and data protection compliance information for DBSsubmit.',
+  title: 'Privacy Policy | DBS-Express',
+  description: 'Privacy policy and data protection compliance information for DBS-Express.',
 };
 
 export default function PrivacyPolicyPage() {
@@ -27,7 +27,7 @@ export default function PrivacyPolicyPage() {
         <div className="max-w-3xl mx-auto space-y-8 text-navy-900 text-lg leading-relaxed">
           <ScrollReveal delay={0.1}>
             <p className="text-navy-900 font-normal">
-              This Privacy Policy explains how <strong className="text-navy-900 font-medium">{SITE.legalName}</strong> (trading as DBSsubmit) collects, uses, and protects personal data when you visit our website at dbssubmit.co.uk.
+              This Privacy Policy explains how <strong className="text-navy-900 font-medium">{SITE.legalName}</strong> (trading as DBS-Express) collects, uses, and protects personal data when you visit our website at dbs-express.co.uk.
             </p>
           </ScrollReveal>
 
@@ -44,7 +44,7 @@ export default function PrivacyPolicyPage() {
             <div className="space-y-3">
               <h2 className="text-2xl font-semibold text-navy-900 tracking-tight">2. How we use your data</h2>
               <p className="text-gray-700 font-normal">
-                Your information is used solely to respond to your enquiries, provide quote estimates, and connect you to our processing partner uCheck.
+                Your information is used solely to respond to your enquiries, provide quote estimates, and connect you to our accredited processing partner.
               </p>
             </div>
           </ScrollReveal>
@@ -53,7 +53,7 @@ export default function PrivacyPolicyPage() {
             <div className="space-y-3">
               <h2 className="text-2xl font-semibold text-navy-900 tracking-tight">3. DBS applicant data scope</h2>
               <p className="text-gray-700 font-normal">
-                DBSsubmit does not store, process, or retain individual DBS applicant criminal record history or identity documents. All DBS application workflows take place directly on uCheck&apos;s accredited, white-labelled platform.
+                DBS-Express does not store, process, or retain individual DBS applicant criminal record history or identity documents. All DBS application workflows take place directly on our accredited processing partner&apos;s certified platform.
               </p>
             </div>
           </ScrollReveal>

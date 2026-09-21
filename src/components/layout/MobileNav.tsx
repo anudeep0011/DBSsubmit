@@ -2,8 +2,9 @@
 
 import React, { useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { NAV_LINKS, UCHECK_LOGIN_URL, UCHECK_APPLY_URL, SITE } from '@/lib/constants';
+import { NAV_LINKS, LOGIN_URL, REGISTER_URL, SITE } from '@/lib/constants';
 import { Button } from '@/components/ui/Button';
 
 interface MobileNavProps {
@@ -31,16 +32,22 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
     <div className="fixed inset-0 z-60 lg:hidden">
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-navy-900/80 backdrop-blur-sm transition-opacity"
+        className="fixed inset-0 bg-black/60 backdrop-blur-xs transition-opacity"
         onClick={onClose}
       />
 
       {/* Drawer content */}
-      <div className="fixed inset-y-0 right-0 w-full max-w-xs bg-navy-900 shadow-2xl p-6 flex flex-col justify-between overflow-y-auto border-l border-navy-800">
+      <div className="fixed inset-y-0 right-0 w-full max-w-xs bg-navy-600 shadow-2xl p-6 flex flex-col justify-between overflow-y-auto border-l border-navy-700">
         <div>
-          <div className="flex items-center justify-between border-b border-navy-800 pb-4 mb-6">
-            <Link href="/" onClick={onClose} className="text-xl font-semibold text-white">
-              DBS<span className="text-orange-400">submit</span>
+          <div className="flex items-center justify-between border-b border-navy-700 pb-4 mb-6">
+            <Link href="/" onClick={onClose} aria-label="DBS-Express Home" className="flex items-center">
+              <Image
+                src="/images/logo2.jpeg"
+                alt="DBS-Express"
+                width={140}
+                height={36}
+                className="h-9 w-auto object-contain rounded-md"
+              />
             </Link>
             <button
               onClick={onClose}
@@ -64,7 +71,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
                   className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
                     isActive
                       ? 'bg-orange-400 text-white'
-                      : 'text-navy-100 hover:bg-navy-800'
+                      : 'text-navy-100 hover:bg-navy-700'
                   }`}
                 >
                   {link.label}
@@ -74,15 +81,15 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
           </nav>
         </div>
 
-        <div className="border-t border-navy-800 pt-6 mt-6 space-y-3">
+        <div className="border-t border-navy-700 pt-6 mt-6 space-y-3">
           <div className="text-xs text-navy-100 mb-2">
             <p className="font-medium text-white">{SITE.phone}</p>
             <p className="font-normal text-navy-200">{SITE.hours}</p>
           </div>
-          <Button href={UCHECK_LOGIN_URL} external variant="navy-outline" className="w-full">
+          <Button href={LOGIN_URL} external variant="navy-outline" className="w-full">
             Portal login
           </Button>
-          <Button href={UCHECK_APPLY_URL} external variant="orange" className="w-full">
+          <Button href={REGISTER_URL} external variant="orange" className="w-full">
             Get a DBS check
           </Button>
         </div>

@@ -33,7 +33,7 @@ export const LogoStrip: React.FC<LogoStripProps> = ({
         {/* Accreditation Notice */}
         <div className="text-center space-y-2">
           <p className="text-xs font-semibold text-orange-500 uppercase tracking-wider">
-            Processed via uCheck — an umbrella body registered with the DBS
+            Accredited DBS processing: registered umbrella body
           </p>
           {heading && (
             <h3 className="text-lg sm:text-xl font-semibold text-navy-900 tracking-tight">

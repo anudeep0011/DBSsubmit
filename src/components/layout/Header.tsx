@@ -2,8 +2,9 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { NAV_LINKS, UCHECK_LOGIN_URL, UCHECK_APPLY_URL } from '@/lib/constants';
+import { NAV_LINKS, LOGIN_URL, REGISTER_URL } from '@/lib/constants';
 import { Button } from '@/components/ui/Button';
 import { MobileNav } from '@/components/layout/MobileNav';
 
@@ -13,14 +14,19 @@ export const Header: React.FC = () => {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-navy-900/95 border-b border-navy-800 backdrop-blur-md transition-all duration-300">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-navy-600 border-b border-navy-700 backdrop-blur-md transition-all duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <Link href="/" className="flex items-center space-x-3 group">
-              <span className="text-2xl font-semibold tracking-tight text-white group-hover:text-orange-300 transition-colors">
-                DBS<span className="text-orange-400">submit</span>
-              </span>
+            <Link href="/" aria-label="DBS-Express Home" className="flex items-center group">
+              <Image
+                src="/images/logo2.jpeg"
+                alt="DBS-Express"
+                width={160}
+                height={40}
+                className="h-10 w-auto object-contain rounded-md group-hover:opacity-90 transition-opacity"
+                priority
+              />
             </Link>
 
             {/* Desktop Nav Links */}
@@ -46,14 +52,14 @@ export const Header: React.FC = () => {
             {/* Right Action / Login Cluster */}
             <div className="hidden lg:flex items-center space-x-6">
               <a
-                href={UCHECK_LOGIN_URL}
+                href={LOGIN_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm font-medium text-navy-200 hover:text-white transition-colors"
               >
                 Login
               </a>
-              <Button href={UCHECK_APPLY_URL} external variant="orange" size="sm">
+              <Button href={REGISTER_URL} external variant="orange" size="sm">
                 Get a DBS Check
               </Button>
             </div>
@@ -63,7 +69,7 @@ export const Header: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setMobileNavOpen(true)}
-                className="relative z-10 p-3 rounded-lg text-navy-100 hover:bg-navy-800 focus:outline-none active:bg-navy-700"
+                className="relative z-10 p-3 rounded-lg text-white hover:bg-navy-700 focus:outline-none active:bg-navy-800"
                 aria-label="Open navigation menu"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -30,7 +30,7 @@ const defaultTestimonials: TestimonialItem[] = [
     avatarSrc: '/images/testimonials/priya_anand.png',
   },
   {
-    quote: '“Support actually replies — a rare thing in this industry.”',
+    quote: '“Support actually replies, which is rare in this industry.”',
     name: 'Tom Beckett',
     title: 'Founder',
     company: 'Beckett Property Management',
@@ -44,7 +44,7 @@ interface TestimonialWallProps {
 
 export const TestimonialWall: React.FC<TestimonialWallProps> = ({ testimonials = defaultTestimonials }) => {
   return (
-    <SectionWrapper bg="navy-50" id="testimonials">
+    <SectionWrapper bg="orange-50" id="testimonials">
       <div className="space-y-12 max-w-7xl mx-auto">
         <ScrollReveal delay={0.1}>
           <div className="text-center space-y-3 max-w-2xl mx-auto">

@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const titleFormatted = slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
   return {
-    title: `${titleFormatted} | DBSsubmit Resources`,
+    title: `${titleFormatted} | DBS-Express Resources`,
     description: `Read our comprehensive guide on ${titleFormatted}.`,
   };
 }
@@ -40,7 +40,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <div className="flex items-center gap-4 text-xs text-navy-600 font-medium">
               <span>Published August 2026</span>
               <span>·</span>
-              <span>DBSsubmit compliance team</span>
+              <span>DBS-Express compliance team</span>
               <span>·</span>
               <span>5 min read</span>
             </div>

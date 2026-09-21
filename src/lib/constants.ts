@@ -1,9 +1,9 @@
 export const SITE = {
-  name: 'DBSsubmit',
+  name: 'DBS-Express',
   legalName: 'Talaty Group Ltd',
   tagline: 'DBS checks, done properly.',
-  phone: '0800 123 4567',
-  email: 'info@dbssubmit.co.uk',
+  phone: '01254 432655',
+  email: 'contact@dbs-express.co.uk',
   address: 'Talaty Group Ltd, London, United Kingdom',
   hours: 'Lines open 9am–5pm, Mon–Fri',
   social: {
@@ -23,5 +23,5 @@ export const NAV_LINKS = [
   { label: 'Contact', href: '/contact' },
 ] as const;
 
-export const UCHECK_LOGIN_URL = process.env.NEXT_PUBLIC_UCHECK_LOGIN_URL || 'https://www.ucheck.co.uk';
-export const UCHECK_APPLY_URL = process.env.NEXT_PUBLIC_UCHECK_APPLY_URL || 'https://www.ucheck.co.uk/apply';
+export const LOGIN_URL = process.env.NEXT_PUBLIC_LOGIN_URL || 'https://www.dbs-express.co.uk/app/login_direct';
+export const REGISTER_URL = process.env.NEXT_PUBLIC_REGISTER_URL || 'https://www.dbs-express.co.uk/app/ci/index_controller/sign_up';

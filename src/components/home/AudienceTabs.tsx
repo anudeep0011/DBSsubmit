@@ -79,13 +79,13 @@ export const AudienceTabs: React.FC = () => {
                   </h3>
 
                   <p className="text-lg text-gray-700 leading-relaxed font-normal">
-                    Manage DBS checks for your entire workforce. Access volume discounts, real-time applicant tracking, and direct employer portal management via uCheck.
+                    Manage DBS checks for your entire workforce. Access volume discounts, real-time applicant tracking, and direct employer portal management via DBS-Express.
                   </p>
 
                   <ul className="space-y-3 text-sm font-normal text-navy-900 pt-2">
                     <li className="flex items-center gap-3">
                       <span className="w-5 h-5 rounded-full bg-orange-50 border border-orange-400 text-orange-500 flex items-center justify-center text-xs font-medium shrink-0">✓</span>
-                      Volume rate cards for 20+ annual applicant submissions
+                      Volume rate cards for 51+ annual applicant submissions
                     </li>
                     <li className="flex items-center gap-3">
                       <span className="w-5 h-5 rounded-full bg-orange-50 border border-orange-400 text-orange-500 flex items-center justify-center text-xs font-medium shrink-0">✓</span>

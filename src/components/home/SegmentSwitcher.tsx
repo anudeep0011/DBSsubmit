@@ -1,11 +1,11 @@
 'use client';
 
 import React, { useState } from 'react';
-import Image from 'next/image';
 import { SectionWrapper } from '@/components/ui/SectionWrapper';
 import { Button } from '@/components/ui/Button';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
-import { UCHECK_APPLY_URL } from '@/lib/constants';
+import { REGISTER_URL } from '@/lib/constants';
+import { SmeVisualCard, EnterpriseVisualCard, IndividualVisualCard } from '@/components/ui/VisualGraphics';
 
 export const SegmentSwitcher: React.FC = () => {
   const [activeSegment, setActiveSegment] = useState<'sme' | 'enterprise' | 'individual'>('sme');
@@ -21,23 +21,21 @@ export const SegmentSwitcher: React.FC = () => {
         'Direct digital identity verification for candidate convenience',
       ],
       ctaLabel: 'Register SME account →',
-      ctaHref: UCHECK_APPLY_URL,
-      imageSrc: '/images/features/smb_screening_portal.png',
-      imageAlt: 'Small and Midsize business background check HR portal',
+      ctaHref: REGISTER_URL,
+      visual: <SmeVisualCard className="w-full h-full min-h-90" />,
     },
     enterprise: {
       title: 'Enterprise Organisations',
       subtitle: 'High-volume screening workflows with dedicated support and volume discount rates.',
-      description: 'Designed for corporate HR teams, healthcare trusts, and large educational institutions managing 20+ to 100+ checks annually.',
+      description: 'Designed for corporate HR teams, healthcare trusts, and large educational institutions managing 51+ checks annually.',
       points: [
-        'Volume administration fee discounts starting at 20+ checks/year',
-        'Dedicated named account manager and phone escalation support',
+        'Volume administration fee discounts starting at 51+ checks/year',
+        'All organisations receive the same level of dedicated support',
         'API & ATS system integrations for streamlined candidate dispatch',
       ],
       ctaLabel: 'Set up enterprise portal →',
       ctaHref: '/employers',
-      imageSrc: '/images/features/employer_screening_portal.png',
-      imageAlt: 'Enterprise bulk workforce screening dashboard interface',
+      visual: <EnterpriseVisualCard className="w-full h-full min-h-90" />,
     },
     individual: {
       title: 'Individual Applicants',
@@ -49,9 +47,8 @@ export const SegmentSwitcher: React.FC = () => {
         'Official paper certificate dispatched to your home address',
       ],
       ctaLabel: 'Apply for individual check →',
-      ctaHref: UCHECK_APPLY_URL,
-      imageSrc: '/images/features/care_education_workforce.png',
-      imageAlt: 'Individual applicant background check verification',
+      ctaHref: REGISTER_URL,
+      visual: <IndividualVisualCard className="w-full h-full min-h-90" />,
     },
   };
 
@@ -70,7 +67,7 @@ export const SegmentSwitcher: React.FC = () => {
             </ScrollReveal>
             <ScrollReveal delay={0.15}>
               <p className="text-lg text-gray-700 font-normal">
-                Select your category to see how DBSsubmit streamlines background checks for your specific requirements.
+                Select your category to see how DBS-Express streamlines background checks for your specific requirements.
               </p>
             </ScrollReveal>
           </div>
@@ -81,7 +78,7 @@ export const SegmentSwitcher: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setActiveSegment('sme')}
-                className={`px-4 py-2.5 rounded-lg font-medium text-xs sm:text-sm transition-all cursor-pointer ${
+                className={`px-4 py-2.5 rounded-lg font-semibold text-xs sm:text-sm transition-all cursor-pointer ${
                   activeSegment === 'sme'
                     ? 'bg-navy-600 text-white shadow-xs'
                     : 'text-navy-600 hover:text-navy-900 hover:bg-navy-100/60'
@@ -92,7 +89,7 @@ export const SegmentSwitcher: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setActiveSegment('enterprise')}
-                className={`px-4 py-2.5 rounded-lg font-medium text-xs sm:text-sm transition-all cursor-pointer ${
+                className={`px-4 py-2.5 rounded-lg font-semibold text-xs sm:text-sm transition-all cursor-pointer ${
                   activeSegment === 'enterprise'
                     ? 'bg-navy-600 text-white shadow-xs'
                     : 'text-navy-600 hover:text-navy-900 hover:bg-navy-100/60'
@@ -103,7 +100,7 @@ export const SegmentSwitcher: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setActiveSegment('individual')}
-                className={`px-4 py-2.5 rounded-lg font-medium text-xs sm:text-sm transition-all cursor-pointer ${
+                className={`px-4 py-2.5 rounded-lg font-semibold text-xs sm:text-sm transition-all cursor-pointer ${
                   activeSegment === 'individual'
                     ? 'bg-navy-600 text-white shadow-xs'
                     : 'text-navy-600 hover:text-navy-900 hover:bg-navy-100/60'
@@ -115,8 +112,8 @@ export const SegmentSwitcher: React.FC = () => {
           </ScrollReveal>
         </div>
 
-        {/* Content Card with Photographic Image Panel */}
-        <div className="bg-navy-50/70 rounded-2xl border border-navy-200 p-4 sm:p-8 md:p-12 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+        {/* Content Card with Dedicated Visual Representation */}
+        <div className="bg-navy-50/70 rounded-2xl border border-navy-200 p-6 sm:p-8 md:p-12 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           {/* Left Text Column */}
           <div className="lg:col-span-6 space-y-6">
             <h3 className="text-2xl sm:text-3xl font-semibold text-navy-900 tracking-tight">
@@ -149,20 +146,12 @@ export const SegmentSwitcher: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column (Photographic Image Panel) */}
-          <div className="lg:col-span-6 relative h-64 sm:h-80 lg:h-96 rounded-xl overflow-hidden border border-navy-200 shadow-xs">
-            <Image
-              src={current.imageSrc}
-              alt={current.imageAlt}
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
-            />
+          {/* Right Column (Tailored, Ultra-Crisp Visual UI Card) */}
+          <div className="lg:col-span-6 w-full flex items-center justify-center">
+            {current.visual}
           </div>
         </div>
       </div>
     </SectionWrapper>
   );
 };
-
-

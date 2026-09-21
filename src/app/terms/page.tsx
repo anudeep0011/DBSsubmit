@@ -3,8 +3,8 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { SITE } from '@/lib/constants';
 
 export const metadata = {
-  title: 'Terms & Conditions | DBSsubmit',
-  description: 'Terms and conditions for using DBSsubmit services.',
+  title: 'Terms & Conditions | DBS-Express',
+  description: 'Terms and conditions for using DBS-Express services.',
 };
 
 export default function TermsPage() {
@@ -27,7 +27,7 @@ export default function TermsPage() {
         <div className="max-w-3xl mx-auto space-y-8 text-navy-900 text-lg leading-relaxed">
           <ScrollReveal delay={0.1}>
             <p className="text-navy-900 font-normal">
-              Welcome to DBSsubmit, operated by <strong className="text-navy-900 font-medium">{SITE.legalName}</strong>. By accessing our site or using our services, you agree to these Terms and Conditions.
+              Welcome to DBS-Express, operated by <strong className="text-navy-900 font-medium">{SITE.legalName}</strong>. By accessing our site or using our services, you agree to these Terms and Conditions.
             </p>
           </ScrollReveal>
 
@@ -35,7 +35,7 @@ export default function TermsPage() {
             <div className="space-y-3">
               <h2 className="text-2xl font-semibold text-navy-900 tracking-tight">1. Scope of service</h2>
               <p className="text-gray-700 font-normal">
-                DBSsubmit provides guidance, marketing, and lead dispatch services for DBS checks. Criminal record check processing and certificate issuance are fulfilled by our accredited partner, uCheck.
+                DBS-Express provides guidance, application assistance, and submission dispatch services for DBS checks. Criminal record check processing and certificate issuance are fulfilled by our accredited umbrella body partner.
               </p>
             </div>
           </ScrollReveal>

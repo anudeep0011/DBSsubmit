@@ -5,7 +5,7 @@ import { DocumentCheckIcon } from '@/components/ui/Illustrations';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'DBS Resources & Blog | DBSsubmit',
+  title: 'DBS Resources & Blog | DBS-Express',
   description: 'Articles, compliance guides, and regulatory news on DBS checks.',
 };
 

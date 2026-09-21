@@ -21,7 +21,7 @@ export const TrustBar: React.FC = () => {
                 DBS umbrella body
               </span>
               <span className="bg-navy-50 border border-navy-200 rounded-md px-3 py-1 text-[0.8125rem] font-medium text-navy-900">
-                Processed via uCheck
+                Accredited DBS Processing
               </span>
             </div>
           </div>

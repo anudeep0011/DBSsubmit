@@ -1,114 +1,96 @@
 import React from 'react';
 import { SectionWrapper } from '@/components/ui/SectionWrapper';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
-import Link from 'next/link';
 import { Code2Icon, LayersIcon, MonitorCheckIcon } from '@/components/ui/Icons';
-import { UCHECK_APPLY_URL } from '@/lib/constants';
+
+const modes = [
+  {
+    icon: Code2Icon,
+    iconBg: 'bg-orange-50 border-orange-200',
+    iconColor: 'text-orange-500',
+    title: 'Build with API',
+    subtitle: 'Developer-First Automation',
+    points: [
+      'Direct REST endpoints for applicant dispatch and tracking',
+      'Instant webhook notifications as soon as certificates are issued',
+    ],
+  },
+  {
+    icon: LayersIcon,
+    iconBg: 'bg-blue-50 border-blue-200',
+    iconColor: 'text-navy-700',
+    title: 'Partner integrations',
+    subtitle: 'Prebuilt Zero-Code Connectors',
+    points: [
+      'Plug-and-play connectors for leading HR and ATS platforms',
+      'Automated candidate status sync with zero manual re-entry',
+    ],
+  },
+  {
+    icon: MonitorCheckIcon,
+    iconBg: 'bg-emerald-50 border-emerald-200',
+    iconColor: 'text-emerald-600',
+    title: 'Native web portal',
+    subtitle: 'Zero Setup or Coding',
+    points: [
+      'Dedicated cloud portal to invite candidates and monitor progress',
+      'Automated candidate SMS reminders and instant digital downloads',
+    ],
+  },
+];
 
 export const ImplementationModes: React.FC = () => {
-  const modes = [
-    {
-      icon: <Code2Icon className="w-6 h-6 text-orange-500" />,
-      badge: 'API',
-      title: 'Build with API',
-      subtitle: 'REST API integration',
-      description: 'Embed background check ordering and automated result webhooks directly into your custom hiring application or onboarding workflow.',
-      ctaLabel: 'Request API documentation →',
-      ctaHref: '/contact',
-      isExternal: false,
-    },
-    {
-      icon: <LayersIcon className="w-6 h-6 text-navy-700" />,
-      badge: 'Integrations',
-      title: 'Partner integrations',
-      subtitle: 'Prebuilt HR & ATS connections',
-      description: 'Connect DBSsubmit with your existing recruitment stack including Greenhouse, Lever, Workday, and PageUp for seamless candidate dispatch.',
-      ctaLabel: 'Explore ATS integrations →',
-      ctaHref: '/contact',
-      isExternal: false,
-    },
-    {
-      icon: <MonitorCheckIcon className="w-6 h-6 text-emerald-600" />,
-      badge: 'Native platform',
-      title: 'Use the DBSsubmit platform',
-      subtitle: 'No integration required',
-      description: 'Direct access to the uCheck web portal. Order checks, invite candidates, monitor status in real-time, and download certificates immediately.',
-      ctaLabel: 'Get started on portal →',
-      ctaHref: UCHECK_APPLY_URL,
-      isExternal: true,
-    },
-  ];
-
   return (
-    <SectionWrapper bg="white" id="implementation-modes">
+    <SectionWrapper bg="orange-50" id="implementation-modes">
       <div className="space-y-12 max-w-7xl mx-auto">
         <div className="space-y-3 max-w-3xl">
-          <ScrollReveal delay={0.1}>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-navy-900 leading-tight">
-              Wherever you work, DBSsubmit fits
+          <ScrollReveal delay={0.15}>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-navy-900 leading-tight">
+              Wherever your team hires, <span className="text-orange-500">DBS-Express fits.</span>
             </h2>
-          </ScrollReveal>
-          <ScrollReveal delay={0.2}>
-            <p className="text-lg text-gray-700 leading-relaxed font-normal">
-              Choose from three flexible deployment methods designed for modern UK organisations.
-            </p>
           </ScrollReveal>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {modes.map((mode, idx) => (
-            <ScrollReveal key={idx} delay={0.15 * (idx + 1)}>
-              <div className="group relative bg-navy-50/70 border border-navy-200 rounded-2xl p-8 shadow-xs hover:border-orange-400 hover:shadow-md transition-all flex flex-col justify-between h-full space-y-8">
-                <div className="space-y-5">
-                  <div className="flex items-center justify-between">
-                    <div className="w-12 h-12 rounded-xl bg-white border border-navy-200 flex items-center justify-center shrink-0 shadow-xs">
-                      {mode.icon}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {modes.map((mode, i) => {
+            const Icon = mode.icon;
+            return (
+              <ScrollReveal key={mode.title} delay={0.15 + i * 0.1}>
+                <div className="group bg-white border border-navy-200 rounded-2xl p-7 shadow-xs hover:shadow-md hover:border-orange-400 transition-all flex flex-col justify-between h-full">
+                  <div className="space-y-5">
+                    {/* Icon */}
+                    <div
+                      className={`w-12 h-12 rounded-xl border flex items-center justify-center shrink-0 shadow-2xs ${mode.iconBg}`}
+                    >
+                      <Icon className={`w-6 h-6 ${mode.iconColor}`} />
                     </div>
-                    <span className="text-xs font-semibold uppercase tracking-wider px-2.5 py-1 rounded-md bg-navy-100 text-navy-800 border border-navy-200">
-                      {mode.badge}
-                    </span>
+
+                    {/* Title & subtitle */}
+                    <div>
+                      <h3 className="text-2xl font-bold text-navy-900 tracking-tight">
+                        {mode.title}
+                      </h3>
+                      <p className="text-xs font-semibold text-orange-500 mt-1 uppercase tracking-wide">
+                        {mode.subtitle}
+                      </p>
+                    </div>
+
+                    {/* 1-2 points per card */}
+                    <ul className="space-y-2.5 pt-2">
+                      {mode.points.map((pt, pIdx) => (
+                        <li key={pIdx} className="flex items-start gap-2.5 text-sm text-gray-700 leading-relaxed font-normal">
+                          <span className="w-1.5 h-1.5 rounded-full bg-orange-500 shrink-0 mt-2" />
+                          <span>{pt}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-
-                  <div>
-                    <h3 className="text-xl font-bold text-navy-900 tracking-tight">
-                      {mode.title}
-                    </h3>
-                    <p className="text-xs font-semibold text-orange-500 mt-1 uppercase tracking-wide">
-                      {mode.subtitle}
-                    </p>
-                  </div>
-
-                  <p className="text-sm text-gray-700 leading-relaxed font-normal">
-                    {mode.description}
-                  </p>
                 </div>
-
-                <div className="pt-4 border-t border-navy-200">
-                  {mode.isExternal ? (
-                    <a
-                      href={mode.ctaHref}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm font-semibold text-orange-500 hover:text-orange-600 transition-colors"
-                    >
-                      <span>{mode.ctaLabel}</span>
-                    </a>
-                  ) : (
-                    <Link
-                      href={mode.ctaHref}
-                      className="inline-flex items-center gap-2 text-sm font-semibold text-orange-500 hover:text-orange-600 transition-colors"
-                    >
-                      <span>{mode.ctaLabel}</span>
-                    </Link>
-                  )}
-                </div>
-              </div>
-            </ScrollReveal>
-          ))}
+              </ScrollReveal>
+            );
+          })}
         </div>
       </div>
     </SectionWrapper>
   );
 };
-
-

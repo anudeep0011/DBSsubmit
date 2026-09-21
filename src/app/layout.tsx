@@ -15,19 +15,19 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
-  themeColor: '#101029',
+  themeColor: '#27276E',
 };
 
 export const metadata: Metadata = {
-  title: 'DBSsubmit | Official Criminal Record Check Services & Portal Hand-off',
+  title: 'DBS-Express | Official Criminal Record Check Services',
   description:
-    'Fast and compliant criminal record processing. Official partner hand-off for Basic, Standard, and Enhanced DBS checks.',
+    'Fast and compliant criminal record processing. Official Basic, Standard, and Enhanced DBS checks with accredited UK processing.',
   openGraph: {
-    title: 'DBSsubmit | Official Criminal Record Check Services',
+    title: 'DBS-Express | Official Criminal Record Check Services',
     description:
       'Compliant criminal record checks for employers and individuals.',
-    url: 'https://dbssubmit.co.uk',
-    siteName: 'DBSsubmit',
+    url: 'https://dbs-express.co.uk',
+    siteName: 'DBS-Express',
     type: 'website',
   },
 };
@@ -39,7 +39,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className="flex flex-col min-h-screen font-sans bg-white text-navy-900 antialiased overflow-x-hidden w-full">
+      <body className="flex flex-col min-h-screen font-sans bg-bg-base text-navy-900 antialiased overflow-x-hidden w-full">
         <Header />
         <main className="grow w-full">{children}</main>
         <Footer />

@@ -7,7 +7,7 @@ export const CookieConsent: React.FC = () => {
   const [showConsent, setShowConsent] = useState(false);
 
   useEffect(() => {
-    const consent = localStorage.getItem('dbssubmit_cookie_consent');
+    const consent = localStorage.getItem('dbsexpress_cookie_consent');
     if (!consent) {
       const timer = setTimeout(() => setShowConsent(true), 0);
       return () => clearTimeout(timer);
@@ -15,19 +15,19 @@ export const CookieConsent: React.FC = () => {
   }, []);
 
   const handleAccept = () => {
-    localStorage.setItem('dbssubmit_cookie_consent', 'accepted');
+    localStorage.setItem('dbsexpress_cookie_consent', 'accepted');
     setShowConsent(false);
   };
 
   const handleDecline = () => {
-    localStorage.setItem('dbssubmit_cookie_consent', 'declined');
+    localStorage.setItem('dbsexpress_cookie_consent', 'declined');
     setShowConsent(false);
   };
 
   if (!showConsent) return null;
 
   return (
-    <div className="fixed bottom-0 inset-x-0 z-50 p-6 bg-navy-900 text-white border-t border-navy-800 shadow-2xl">
+    <div className="fixed bottom-0 inset-x-0 z-50 p-6 bg-navy-600 text-white border-t border-navy-500 shadow-2xl">
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
         <div className="text-sm text-navy-100 max-w-3xl space-y-1">
           <p className="font-bold text-white text-base">Cookie & Privacy Consent</p>

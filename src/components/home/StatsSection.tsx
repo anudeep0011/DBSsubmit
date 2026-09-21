@@ -8,32 +8,32 @@ import { StatCallout } from '@/components/ui/StatCallout';
 export const StatsSection: React.FC = () => {
   const stats = [
     {
-      value: '4.8★',
-      label: 'Average client rating across 2,000+ employer reviews',
-      ariaLabel: '4.8 out of 5 stars average rating',
+      value: '99.4%',
+      label: 'First-time application accuracy rate across all sectors',
+      ariaLabel: '99.4 percent accuracy',
     },
     {
-      value: '98%',
-      label: 'Checks returned within estimated turnaround time frame',
-      ariaLabel: '98 percent checks returned on time',
+      value: '< 24h',
+      label: 'Average turnaround for electronic Basic check results',
+      ariaLabel: 'Under 24 hours turnaround',
     },
     {
-      value: '24hrs',
-      label: 'Typical time to first status update on uCheck portal',
-      ariaLabel: '24 hours average time to first status update',
+      value: '50k+',
+      label: 'UK criminal record checks processed annually',
+      ariaLabel: 'Over 50 thousand checks processed',
     },
   ];
 
   return (
-    <SectionWrapper bg="navy" id="stats">
+    <SectionWrapper bg="white" id="stats">
       <div className="space-y-12 max-w-7xl mx-auto">
         <ScrollReveal delay={0.1}>
           <div className="text-center space-y-3 max-w-2xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-semibold text-white tracking-tight">
-              Speed and accuracy measured in data.
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 tracking-tight">
+              Speed and accuracy <span className="text-orange-500">measured in data.</span>
             </h2>
-            <p className="text-navy-100 text-base font-normal">
-              Built on certified government screening infrastructure.
+            <p className="text-gray-700 text-base sm:text-lg font-normal">
+              Built on certified government screening infrastructure with industry-leading speed.
             </p>
           </div>
         </ScrollReveal>
@@ -45,7 +45,7 @@ export const StatsSection: React.FC = () => {
                 value={stat.value}
                 label={stat.label}
                 ariaLabel={stat.ariaLabel}
-                bg="navy-800"
+                bg="white"
               />
             </ScrollReveal>
           ))}

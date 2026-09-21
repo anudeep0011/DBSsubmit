@@ -25,7 +25,7 @@
 
   --color-navy: #27276E;
   --color-orange: #E6772C;
-  --color-bg-base: #FFFFFF;
+  --color-bg-base: #FEF8FF;
   --color-bg-section: #F5F5F9;
   --color-orange-tint: #FCE3CC;
 
@@ -34,7 +34,7 @@
 
 /* ===== Cross-browser & responsive resets ===== */
 :root {
-  --background: #FFFFFF;
+  --background: #FEF8FF;
   --foreground: #101029;
 }
 
@@ -96,13 +96,15 @@ svg {
   display: block;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-sans);
-  font-weight: 600;
-  letter-spacing: -0.015em;
-  color: #27276E;
-  overflow-wrap: break-word;
-  word-break: break-word;
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    color: #27276E;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
 }
 
 /* Display typography helpers */

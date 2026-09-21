@@ -2,8 +2,8 @@ import { SectionWrapper } from '@/components/ui/SectionWrapper';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 export const metadata = {
-  title: 'Meet the Team | DBSsubmit',
-  description: 'The team behind DBSsubmit and Talaty Group Ltd.',
+  title: 'Meet the Team | DBS-Express',
+  description: 'The team behind DBS-Express and Talaty Group Ltd.',
 };
 
 export default function TeamPage() {
@@ -21,7 +21,7 @@ export default function TeamPage() {
     {
       name: 'Technology Team',
       role: 'Integration & Platform',
-      bio: 'Maintaining robust data protection standards and reliable platform connectivity with uCheck processing systems.',
+      bio: 'Maintaining robust data protection standards and reliable platform connectivity with accredited processing systems.',
     },
   ];
 
@@ -38,7 +38,7 @@ export default function TeamPage() {
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
               <p className="text-lg sm:text-xl text-gray-700 leading-relaxed font-normal">
-                The Talaty Group team behind DBSsubmit&apos;s day-to-day operations and employer support.
+                The Talaty Group team behind DBS-Express&apos;s day-to-day operations and employer support.
               </p>
             </ScrollReveal>
           </div>
