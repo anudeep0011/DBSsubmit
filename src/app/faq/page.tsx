@@ -192,8 +192,25 @@ const faqData: FAQItemData[] = [
 ];
 
 export default function FAQPage() {
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqData.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       {/* 1. Compact White Header */}
       <header className="bg-white text-navy-900 pt-32 pb-12 border-b border-navy-100">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">

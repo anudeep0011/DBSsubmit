@@ -85,8 +85,17 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <h3 className="text-xs font-medium text-navy-600">Email</h3>
-                    <p className="text-navy-900 text-base mt-1 font-normal">{SITE.email}</p>
+                    <h3 className="text-xs font-medium text-navy-600">Email enquiry</h3>
+                    <a
+                      href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(SITE.email)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-navy-900 text-base font-semibold mt-1 hover:text-orange-500 transition-colors inline-flex items-center gap-1.5"
+                    >
+                      {SITE.email}
+                      <span className="text-xs text-orange-500 font-normal underline">Open in Gmail ↗</span>
+                    </a>
+                    <p className="text-xs text-gray-500 mt-0.5">Mon–Fri responses within 24 hours</p>
                   </div>
                 </div>
               </div>

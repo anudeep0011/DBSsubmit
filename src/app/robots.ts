@@ -4,11 +4,17 @@ export default function robots(): MetadataRoute.Robots {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://dbs-express.co.uk';
 
   return {
-    rules: {
-      userAgent: '*',
-      allow: '/',
-      disallow: ['/team', '/api/'],
-    },
+    rules: [
+      {
+        userAgent: '*',
+        allow: '/',
+        disallow: ['/api/'],
+      },
+      {
+        userAgent: 'GPTBot',
+        disallow: ['/api/'],
+      },
+    ],
     sitemap: `${baseUrl}/sitemap.xml`,
   };
 }

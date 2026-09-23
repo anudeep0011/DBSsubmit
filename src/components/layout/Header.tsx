@@ -60,7 +60,7 @@ export const Header: React.FC = () => {
                 Login
               </a>
               <Button href={REGISTER_URL} external variant="orange" size="sm">
-                Get a DBS Check
+                Register
               </Button>
             </div>
 

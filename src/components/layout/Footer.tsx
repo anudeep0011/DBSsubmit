@@ -107,8 +107,13 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/faq" className="hover:text-navy-900 hover:underline transition-colors">
-                  ROA 1974 eligibility
+                <Link href="/maintenance" className="hover:text-navy-900 hover:underline transition-colors">
+                  System status
+                </Link>
+              </li>
+              <li>
+                <Link href="/offline" className="hover:text-navy-900 hover:underline transition-colors">
+                  Offline &amp; connectivity help
                 </Link>
               </li>
             </ul>
@@ -144,6 +149,11 @@ export const Footer: React.FC = () => {
               Legal &amp; compliance
             </h4>
             <ul className="space-y-2.5 text-sm text-gray-600">
+              <li>
+                <Link href="/policies" className="hover:text-navy-900 hover:underline transition-colors">
+                  Company policies
+                </Link>
+              </li>
               <li>
                 <Link href="/privacy-policy" className="hover:text-navy-900 hover:underline transition-colors">
                   Privacy policy

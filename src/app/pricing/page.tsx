@@ -70,8 +70,60 @@ export default function PricingPage() {
     },
   ];
 
+  const pricingJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Official DBS Criminal Record Checks',
+    provider: {
+      '@type': 'Organization',
+      name: 'DBS-Express',
+    },
+    serviceType: 'Background Screening & Criminal Record Disclosures',
+    areaServed: 'GB',
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'DBS Check Rates',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Basic DBS Check',
+            description: 'Shows unspent convictions and conditional cautions under UK law.',
+          },
+          price: '37.70',
+          priceCurrency: 'GBP',
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Standard DBS Check',
+            description: 'Shows spent and unspent convictions, cautions, warnings, and reprimands.',
+          },
+          price: '37.70',
+          priceCurrency: 'GBP',
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Enhanced DBS Check',
+            description: 'Includes full criminal history plus relevant local police intelligence.',
+          },
+          price: '65.70',
+          priceCurrency: 'GBP',
+        },
+      ],
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingJsonLd) }}
+      />
       {/* 1. Compact White Header */}
       <header className="bg-white text-navy-900 pt-32 pb-12 border-b border-navy-100">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">

@@ -1,147 +1,75 @@
 'use client';
 
-import React, { useState } from 'react';
-import { Button } from '@/components/ui/Button';
-import { Badge } from '@/components/ui/Badge';
+import React from 'react';
+import { SITE } from '@/lib/constants';
 
 export const ContactForm: React.FC = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
-  });
+  const emailSubject = 'DBS Check Application & Screening Request';
+  const emailBody = `Hello DBS-Express Team,\n\nI would like to start a DBS check application / enquire about screening services.\n\nApplicant/Company Name:\nType of Check (Basic / Standard / Enhanced):\nContact Phone:\nAdditional Details:\n\nThank you.`;
 
-  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
-  const [errorMessage, setErrorMessage] = useState('');
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus('submitting');
-    setErrorMessage('');
-
-    try {
-      const res = await fetch('/api/contact-form', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await res.json();
-      if (res.ok && data.success) {
-        setStatus('success');
-        setFormData({ name: '', email: '', phone: '', message: '' });
-      } else {
-        setStatus('error');
-        setErrorMessage(data.error || 'Failed to send enquiry. Please try again.');
-      }
-    } catch {
-      setStatus('error');
-      setErrorMessage('Network error occurred. Please try again later.');
-    }
-  };
+  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
+    SITE.email
+  )}&su=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
 
   return (
-    <div className="bg-white rounded-2xl p-8 sm:p-12 border border-navy-200 shadow-sm">
-      <h3 className="text-3xl font-extrabold text-navy-900 mb-8 tracking-tight">Service Enquiry Form</h3>
+    <div className="bg-white rounded-2xl p-8 sm:p-12 border border-navy-200 shadow-sm space-y-8">
+      
+      {/* Card Header */}
+      <div className="space-y-3">
+        <h3 className="text-2xl sm:text-3xl font-bold text-navy-900 tracking-tight">
+          Start Your Application
+        </h3>
+        <p className="text-gray-600 text-sm leading-relaxed">
+          Connect directly with our compliance screening desk. Submissions received before 4pm UK time are dispatched same day.
+        </p>
+      </div>
 
-      {status === 'success' ? (
-        <div className="bg-orange-50 border border-orange-300 text-navy-900 p-8 rounded-xl text-center space-y-4">
-          <span className="text-xs font-medium text-white bg-orange-400 px-3 py-1 rounded tracking-wide">
-            CONFIRMED
-          </span>
-          <h4 className="font-semibold text-2xl text-navy-900">Enquiry Received</h4>
-          <p className="text-base text-gray-700">Our compliance team will respond within 1 working day.</p>
-          <div className="pt-4">
-            <Button
-              variant="navy"
-              size="sm"
-              onClick={() => setStatus('idle')}
-            >
-              Submit Another Query
-            </Button>
+      {/* 1-2 Key Points */}
+      <div className="space-y-4 pt-2">
+        <div className="flex items-start gap-3.5">
+          <div className="w-7 h-7 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">
+            ✓
+          </div>
+          <div>
+            <h4 className="text-sm font-semibold text-navy-900">
+              Direct Application Dispatch
+            </h4>
+            <p className="text-xs text-gray-600 leading-relaxed mt-0.5">
+              Launch directly into Gmail with our company desk prefilled to submit candidate details, volume requests, or eligibility checks.
+            </p>
           </div>
         </div>
-      ) : (
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="flex items-center gap-3 mb-6">
-            <Badge variant="orange">Enquiry</Badge>
-            <span className="text-xs font-medium text-gray-700">All fields strictly confidential</span>
+
+        <div className="flex items-start gap-3.5">
+          <div className="w-7 h-7 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">
+            ✓
           </div>
-
-          {status === 'error' && (
-            <div className="bg-orange-50 border border-orange-300 text-navy-900 p-4 rounded-xl text-xs font-medium">
-              {errorMessage}
-            </div>
-          )}
-
           <div>
-            <label className="block text-xs font-medium text-navy-600 mb-2">
-              First name *
-            </label>
-            <input
-              type="text"
-              required
-              value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              placeholder="e.g. Sarah Jenkins"
-              className="w-full px-4 py-3 rounded-lg border border-navy-200 focus:outline-none focus:ring-2 focus:ring-orange-400 font-normal text-sm"
-            />
+            <h4 className="text-sm font-semibold text-navy-900">
+              Expert Compliance Review
+            </h4>
+            <p className="text-xs text-gray-600 leading-relaxed mt-0.5">
+              Every submission is checked by trained DBS countersignatories to prevent rejection or delays.
+            </p>
           </div>
+        </div>
+      </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div>
-              <label className="block text-xs font-medium text-navy-600 mb-2">
-                Work email *
-              </label>
-              <input
-                type="email"
-                required
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                placeholder="sarah@company.co.uk"
-                className="w-full px-4 py-3 rounded-lg border border-navy-200 focus:outline-none focus:ring-2 focus:ring-orange-400 font-normal text-sm"
-              />
-            </div>
-            <div>
-              <label className="block text-xs font-medium text-navy-600 mb-2">
-                Phone number (optional)
-              </label>
-              <input
-                type="tel"
-                value={formData.phone}
-                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                placeholder="0800 123 4567"
-                className="w-full px-4 py-3 rounded-lg border border-navy-200 focus:outline-none focus:ring-2 focus:ring-orange-400 font-normal text-sm"
-              />
-            </div>
-          </div>
+      {/* Action Button: Start Application */}
+      <div className="pt-4">
+        <a
+          href={gmailUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-semibold text-base transition-all shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-orange-400 cursor-pointer text-center"
+        >
+          <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/>
+          </svg>
+          Start Application
+        </a>
+      </div>
 
-          <div>
-            <label className="block text-xs font-medium text-navy-600 mb-2">
-              How can we help? *
-            </label>
-            <textarea
-              required
-              rows={4}
-              value={formData.message}
-              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              placeholder="Tell us about your background check requirements..."
-              className="w-full px-4 py-3 rounded-lg border border-navy-200 focus:outline-none focus:ring-2 focus:ring-orange-400 font-normal text-sm resize-none"
-            />
-          </div>
-
-          <Button
-            type="submit"
-            variant="orange"
-            size="lg"
-            className="w-full"
-            disabled={status === 'submitting'}
-          >
-            {status === 'submitting' ? 'Submitting Enquiry...' : 'Submit Service Enquiry'}
-          </Button>
-        </form>
-      )}
     </div>
   );
 };

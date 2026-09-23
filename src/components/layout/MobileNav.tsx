@@ -90,7 +90,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
             Portal login
           </Button>
           <Button href={REGISTER_URL} external variant="orange" className="w-full">
-            Get a DBS check
+            Register
           </Button>
         </div>
       </div>
